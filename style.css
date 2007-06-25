@@ -1,0 +1,192 @@
+
+body {
+	font-family: "Franklin Gothic Medium", verdana, sans-serif;
+	
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	padding:10px;
+	padding-top:0px;
+}
+
+#header {
+	
+}
+
+#header h1 {
+	margin-bottom: 0px;
+	padding-bottom:0px;
+	
+	font-size:0px;
+	color:white;
+	
+	width:356px;
+	height:120px;
+	
+	background:white url( ../images/header.jpg ) no-repeat top left;
+
+}
+
+#header h2 {
+
+	margin-top: 0px;
+	padding-top: 0px;
+
+	font-weight:normal;
+}
+
+.required {
+	border:solid 2px red;
+	background:#ffc;
+}
+
+.alert {
+	color:blue;
+}
+
+.bgtext {
+  color: black;
+  float:right;
+}
+
+/* Form */
+
+.form {
+	width:760px;
+	border: solid 2px #999;
+	padding:10px;
+	background: #66ccff;
+	list-style:none;
+}
+
+.form label {
+	display:block;
+	font-size: 9pt;
+}
+
+
+.input,
+ input {
+	margin-top:3px;
+	margin-bottom:5px;
+	background: white;
+	font-family: "Franklin Gothic Medium", verdana, sans-serif;
+}
+
+.button {
+
+	font-family: "Franklin Gothic Medium", verdana, sans-serif;
+	border: solid 1px #999;
+	background:#eee;
+	font-size:12pt;
+}
+
+/* Targeted elements */
+
+#chatpane 
+{
+	height:300px;
+	/*width:80%*/
+	width:600px;
+	float:left;
+	
+	color:Black;
+	overflow:auto;
+	border:solid 3px #eef;
+	background:white;
+	padding:4px;
+	margin-bottom:4px;
+	margin-right:10px;
+}
+
+#chatbuffer
+{
+ 	width:560px;
+}
+
+#userpane
+{
+	height:298px;
+	width:117px;
+	/*float:left;*/
+	/*left: 200px;*/
+	
+	color:Black;
+	
+	overflow:auto;
+	
+	border:solid 3px #eef;
+	background:white;
+	padding:5px;
+	margin-bottom:4px;
+}
+
+#userlist
+{
+	width:100px;
+}
+
+#chatpane ul,
+#userpane ul 
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#chatpane ul li,
+#userpane ul li 
+{
+	font-size:8pt;
+}
+
+#stats,
+#charcount 
+{
+	font-size:8pt;
+	padding:3px;
+	border:solid 2px white;
+	background:#eef;
+	margin:1px;
+	display:inline;
+}
+
+#archivelink
+{
+	font-size:8pt;
+	padding:3px;
+	border:solid 2px white;
+	background:#eef;
+	margin:1px;
+	display:inline;
+}
+
+#footer {
+	
+	border-top: solid 2px #ccc;
+	margin-top:20px;
+	padding:5px;
+	text-align:center;
+}
+
+.servermsg 
+{
+	color:Red;
+}
+
+.actionmsg
+{
+	color:Blue;
+}
+
+.mytext 
+{
+	width:100%;
+	margin-bottom:10px;	
+}
+
+.clear 
+{
+	clear:left;
+}

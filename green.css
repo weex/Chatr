@@ -1,0 +1,200 @@
+body {
+	font-family: "Franklin Gothic Medium", verdana, sans-serif;
+	
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	padding:10px;
+	padding-top:0px;
+	background:black;
+}
+
+#header {
+	
+}
+
+#header h1 {
+	margin-bottom: 0px;
+	padding-bottom:0px;
+	
+	font-size:0px;
+	color:white;
+	
+	width:356px;
+	height:120px;
+	
+	background:white url( ../images/header.jpg ) no-repeat top left;
+
+}
+
+#header h2 {
+
+	margin-top: 0px;
+	padding-top: 0px;
+
+	font-weight:normal;
+}
+
+.required {
+	border:solid 2px red;
+	background:#ffc;
+}
+
+.alert {
+	color:blue;
+}
+
+
+.bgtext {
+  color: green;
+  float:right;
+}
+
+/* Form */
+
+.form {
+	width:760px;
+	border: solid 2px green;
+	padding:10px;
+	/*background: #66ccff;*/
+	background:#004400;
+	list-style:none;
+}
+
+.form label {
+	display:block;
+	font-size: 9pt;
+}
+
+
+.input,
+ input {
+	margin-top:3px;
+	margin-bottom:5px;
+	color: white;
+	background: black;
+	font-family: "Franklin Gothic Medium", verdana, sans-serif;
+	border: solid 2px green;
+}
+
+.button {
+
+	font-family: "Franklin Gothic Medium", verdana, sans-serif;
+	border: solid 1px #999;
+	background:#eee;
+	font-size:12pt;
+}
+
+/* Targeted elements */
+
+#chatpane 
+{
+	height:300px;
+	/*width:80%*/
+	width:600px;
+	float:left;
+	
+	color:#0b0;
+	
+
+	overflow:auto;
+	
+	border:solid 3px green;
+	background:black;
+	padding:4px;
+	margin-bottom:4px;
+	margin-right:10px;
+}
+
+#chatbuffer
+{
+ width:560px;
+}
+
+#userpane
+{
+	height:298px;
+	width:117px;
+	/*float:left;*/
+	/*left: 200px;*/
+	
+	color:#0b0;
+	
+	overflow:auto;
+	
+	border:solid 3px green;
+	background:black;
+	padding:5px;
+	margin-bottom:4px;
+}
+
+#userlist
+{
+	width:100px;
+}
+
+#chatpane ul,
+#userpane ul 
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#chatpane ul li,
+#userpane ul li 
+{
+	font-size:8pt;
+}
+
+#stats,
+#charcount 
+{
+	font-size:8pt;
+	padding:3px;
+	border:solid 2px green;
+	background:#eef;
+	margin:1px;
+	display:inline;
+}
+
+#archivelink
+{
+	font-size:8pt;
+	padding:3px;
+	border:solid 2px white;
+	background:#eef;
+	margin:1px;
+	display:inline;
+}
+
+#footer {
+	
+	border-top: solid 2px blue;
+	margin-top:20px;
+	padding:5px;
+	text-align:center;
+}
+
+.servermsg 
+{
+	color:Red;
+}
+
+.actionmsg
+{
+	color:white;
+}
+
+.mytext 
+{
+	width:100%;
+	margin-bottom:10px;	
+	border: solid 2px green;
+}
+
+.clear 
+{
+	clear:left;
+}

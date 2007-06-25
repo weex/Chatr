@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Chatr Readme</title>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<strong>Readme.txt - Chatr
+</strong>
+<p>Chatr is a chatroom on your site. It's a set of php scripts and some javascript to create an AJAX/php chatroom with php as the only server requirement. Installation aims to be simple, limited to dropping the scripts in a folder on your server, visiting install.php and testing it out.</p>
+<p>Feel free to develop and expand upon it. I'd love to <a href="mailto:david@sterryit.com">hear</a> what you do with it. Also, if you'd like to contribute your changes back to the project, please download and use the <a href="http://www.sterryit.com/chatr/diffpatch.zip">python patch creation script.</a></p>
+<p><strong>Installation</strong></p>
+<p>1. Upload the contents of the zipfile to your server in its own folder.</p>
+<p>2. Open install.php in your browser, fill in each of the fields, and click submit. </p>
+<p>3. Congratulations, your installation is complete. Login to your new chatroom! </p>
+<p><strong>Notes</strong></p>
+<p>If it still doesn't work after submitting the form in install.php, check that the config.php was created. If config.php doesn't exist, make sure your webserver has write access to chatr's folder.</p>
+<p>This chat is designed to be simple above all else and not to hammer your web server too hard. Therefore don't expect it to be irc or AIM or something more than what it is. </p>
+<p><strong>Changelog</strong></p>
+<p>Version 0.7 - 10/8/2006 </p>
+<ul>
+  <li>Buffer and pings file size is managed</li>
+  <li>Duplicate first visitor bug fixed</li>
+  <li>Eliminated holding down Enter flood</li>
+</ul>
+<p>Version 0.6 - 10/7/2006 </p>
+<ul>
+  <li>Removed version numbers from source code to make it easier to rev</li>
+  <li>Fixed time out bug in IE</li>
+</ul>
+<p>Version 0.5 - 1/12/2006 </p>
+<ul>
+  <li>Chatr is now distributed under the BSD license. See LICENSE.TXT for more info.</li>
+  <li>Client comes out of idle as soon as input field gains focus </li>
+  <li>Thanks to Ayhan Baris for adding Turkish support and smilies.</li>
+  <li>Added option to send an email when someone joins.</li>
+  <li>*** added to title bar to indicate messages while minimized</li>
+  <li> Admin user defined that requires password to use </li>
+</ul>
+<p>Version 0.4 - 12/31/2005</p>
+<ul>
+  <li>timed out users now see an error message and their javascript client halts</li>
+  <li>idlers throttled back after 2 mins - cuts bandwidth in half </li>
+  <li>fixed users not timing out</li>
+  <li>moved javascript to external file to simplify future updates </li>
+  <li>fixed default css layout in ie</li>
+</ul>
+<p>Version 0.3 - 12/23/2005</p>
+<ul>
+  <li> spaces no longer allowed in usernames</li>
+  <li>fixed quick visit users staying in the room forever</li>
+  <li> flatfiles are created and used without error after their deleted</li>
+  <li>admin folder removed </li>
+</ul>
+<p>Version 0.2 - 12/22/2005</p>
+<ul>
+  <li>Introduction</li>
+</ul>
+<p>One user had a bug in their installation after editing the chat.php file. Their edited version had multiple paragraph tags with the same id(i.e. stats, charcount). This is known to cause Internet Explorer users to time out   90 seconds after joining at least with IE versions 6.00.2800 and 6.00.2600.</p>
+
+
+</body>
+</html>
