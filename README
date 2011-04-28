@@ -1,0 +1,93 @@
+Readme.txt - Chatr
+
+Chatr is a chatroom on your site. It's a set of php scripts and some javascript to create an AJAX/php chatroom with php as the only server requirement. Installation aims to be simple, limited to dropping the scripts in a folder on your server, visiting install.php and testing it out.
+
+Some people ask if using an ajax chat script that polls the server is bad for server performance. Of course you're not going to want to run a 50+ user chat using a php script for the server side but for 10-20 users, your server should be able to handle it ok. This is because the polling that the chat client does really piggybacks on an open connection with the webserver. This means there isn't all the setup/teardown overhead of visiting a website of grabbing an image from a random web server.
+
+Feel free to develop and expand upon it. I'd love to hear what you do with it. Also, if you'd like to contribute your changes back to the project, please download and use the python patch creation script.
+
+Installation
+
+1. Upload the contents of the zipfile to your server in its own folder.
+
+2. Open install.php in your browser, fill in each of the fields, and click submit.
+
+3. Congratulations, your installation is complete. Login to your new chatroom!
+
+Configuration Options
+
+In the file config.php that's created by running install.php there are a number of parameters that you can adjust to tune your security or the behavior of the scripts.
+
+$email_addr - if this is set to anything other than none, Chatr will send an email whenever someone enters the chat room. I had this set to send an email to my cellphone at one point and it really helped me to catch people joining the room. You've got to be quick to catch someone but if you do, you might just put the chatroom in a state to where one or two more people will join.
+
+$admin and $admin_num - these are id numbers that the chat client sends your server to signify they are the admin user. During installation a 4 digit number is generated that is used for the first part of each of these fields and to give the text files somewhat random names. To increase security you can make these more random.
+
+$maxlines - this is how many lines of text will be displayed in the buffer window. When a user enters the room they'll be able to see this amount of history in the chat room. All users see the same amount of text in the main chat area. If you set this to a large number, you'll increase the amount of bandwidth that your Chatr will use. This is because this whole file is sent every 2 seconds or so.
+
+$timeout - after this many seconds of not receiving a ping, a user will be timed out. It's as close as we can get to having a user leave short of requiring them to click a button to exit. You probably don't want to change this value though if you're looking for a more aggressive logout, you could set it to something between 31 and 59 seconds(the client pings every 30 seconds by default).
+
+The rest of the parameters are fairly self-explanatory. If you want to increase the security of your Chatr installation you could specify more complicated filenames for the pings, buffer and users files. Chatr creates these files if they do not exist so renaming them right in config.php is a perfectly fine thing to do.
+
+Notes
+
+If it still doesn't work after submitting the form in install.php, check that the config.php was created. If config.php doesn't exist, make sure your webserver has write access to chatr's folder.
+
+This chat is designed to be simple above all else and not to hammer your web server too hard. Therefore don't expect it to be irc or AIM or something more than what it is.
+
+The Scripts
+
+buffertext.php - if called with a valid user this script returns the latest chat text that should be displayed in the main chat window.
+chat.php - presents the user interface after login.php has been called by a submit on index.php
+config.php - contains some of the configurable parameters for your installation
+index.php - the introductory page with the login form, a submit here redirects to login.php to validate the input and start the chat session
+install.php - presents some installation questions and posts to install2.php
+install2.php - checks the input from install.php and creates config.php(requires write permissions).
+login.php - validates the username and checks the password if the username is a variation on the admin username
+ping.php - updates a users entry in the pings text file to keep them logged in
+posttext.php - processes user input during chat so they can say something in the chat room
+status.php - runs timeout.php and returns the number of users in the chat room. Include into another page on your site for best effect.
+timeout.php - checks the pings file and users file for timed out users. Removes timed out users from the users file.
+userlist.php - returns the list of active users to be displayed by the chat client
+
+Changelog
+
+Version 0.7 - 10/8/2006
+
+    * Buffer and pings file size is managed
+    * Duplicate first visitor bug fixed
+    * Eliminated holding down Enter flood
+
+Version 0.6 - 10/7/2006
+
+    * Removed version numbers from source code to make it easier to rev
+    * Fixed time out bug in IE
+
+Version 0.5 - 1/12/2006
+
+    * Chatr is now distributed under the BSD license. See LICENSE.TXT for more info.
+    * Client comes out of idle as soon as input field gains focus
+    * Thanks to Ayhan Baris for adding Turkish support and smilies.
+    * Added option to send an email when someone joins.
+    * *** added to title bar to indicate messages while minimized
+    * Admin user defined that requires password to use
+
+Version 0.4 - 12/31/2005
+
+    * timed out users now see an error message and their javascript client halts
+    * idlers throttled back after 2 mins - cuts bandwidth in half
+    * fixed users not timing out
+    * moved javascript to external file to simplify future updates
+    * fixed default css layout in ie
+
+Version 0.3 - 12/23/2005
+
+    * spaces no longer allowed in usernames
+    * fixed quick visit users staying in the room forever
+    * flatfiles are created and used without error after their deleted
+    * admin folder removed
+
+Version 0.2 - 12/22/2005
+
+    * Introduction
+
+One user had a bug in their installation after editing the chat.php file. Their edited version had multiple paragraph tags with the same id(i.e. stats, charcount). This is known to cause Internet Explorer users to time out 90 seconds after joining at least with IE versions 6.00.2800 and 6.00.2600.
