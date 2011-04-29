@@ -12,16 +12,18 @@
 </head>
 <body>
 
-<?  
+<?php 
 
 $path = getcwd();
 if( file_exists($path."/config.php") ) { 
   $found = 1;
 }
 
-if($_GET['alert'] == "1" || $found == 1) {
-  echo "<p style='color:red'>If you want to reconfigure Chatr, please delete the file &quot;config.php&quot; from this folder</p></body></html>";
-  exit;
+if( isset($_GET['alert']) ) {
+  if( $_GET['alert'] == "1" || $found == 1 ) {
+    echo "<p style='color:red'>If you want to reconfigure Chatr, please delete the file &quot;config.php&quot; from this folder</p></body></html>";
+    exit;
+  }
 }
   
 ?>

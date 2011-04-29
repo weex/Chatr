@@ -1,4 +1,4 @@
-<?
+<?php
 // Chatr - Super-simple chat for your site
 //   (c) 2006 David Sterry
 //   Distributed under the BSD license
@@ -6,8 +6,10 @@
 
 include("config.php");
 
-$userid = $_GET['u'];
-$d = $_GET['d'];
+if( isset($_GET['u']) )
+  $userid = $_GET['u'];
+if( isset($_GET['d']) )
+  $d = $_GET['d'];
 
 #$userid = 3077432343;
 $type = 0;
@@ -26,7 +28,7 @@ $num = count($lines);
 $num--; #cuz there's always a whitespace line at the end.
 if( $num < $maxlines * 2 || $d == 1 ) { $start = 0; }
 else { $start = $num - ($maxlines  * 2) ; }
-if ( $d == 1 ) { echo "<html><head><title>Chatr Archive</title><link rel='stylesheet' href='style.css' type='text/css' ></head><body style='width:620px'><div id='chatpane'><ul id='chatbuffer'>"; }
+if ( !empty($d) && $d == 1 ) { echo "<html><head><title>Chatr Archive</title><link rel='stylesheet' href='style.css' type='text/css' ></head><body style='width:620px'><div id='chatpane'><ul id='chatbuffer'>"; }
 echo "<div width='50%'>";
 for($i = $start; $i < $num; $i = $i + 2) {
   $lines[$i+1] = stripslashes($lines[$i+1]);
@@ -44,5 +46,5 @@ for($i = $start; $i < $num; $i = $i + 2) {
   } 
 }
 echo "</div>";
-if ( $d == 1 ) { echo "</div></ul></body></html>"; }
+if ( !empty($d) && $d == 1 ) { echo "</div></ul></body></html>"; }
 ?>

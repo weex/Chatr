@@ -1,4 +1,4 @@
-<?
+<?php
 // Chatr - Super-simple chat for your site
 //   (c) 2006 David Sterry
 //   Distributed under the BSD license
@@ -25,29 +25,28 @@ for( $i = 0; $i < $num; $i++ ) {
   $timestamp = $data[1];
   // transfer all lines but the timed out ones
   for( $j = 0; $j < $jnum; $j++) {
-	$userdata = explode(",",$userline[$j] );
-	$users_uid = $userdata[0];
-	if( $users_uid == $ping_uid ) {
-       if( $timestamp >= $now - $timeout ) {
-	    $newuserlines[] = $userline[$j];
-	   } else {
-	    // give message that user timed out to the room
-	    $usertodrop = $userdata[1];
+    $userdata = explode(",",$userline[$j] );
+    $users_uid = $userdata[0];
+    if( $users_uid == $ping_uid ) {
+      if( $timestamp >= $now - $timeout ) {
+	   $newuserlines[] = $userline[$j];
+      } else {
+        // give message that user timed out to the room
+        $usertodrop = $userdata[1];
         $drop = 1;
-	  }
-	}
-  }
- 
+      }
+    }
+  } 
 }
 
 if( $drop ) {
-$fu = @fopen($users_file,"w+");
-if( $newuserlines ) { 
-  $newfile = implode("\n",$newuserlines); 
-  fopen($path_to_chat."posttext.php?u=".$admin_id."&t=User%20".$usertodrop."%20timed%20out","r");
-}
-fwrite($fu,$newfile);
-fclose($fu);
+  $fu = @fopen($users_file,"w+");
+  if( $newuserlines ) { 
+    $newfile = implode("\n",$newuserlines); 
+    fopen($path_to_chat."posttext.php?u=".$admin_id."&t=User%20".$usertodrop."%20timed%20out","r");
+  }
+  fwrite($fu,$newfile);
+  fclose($fu);
 }
 
 // section to stop buffertext and pings from growing too large

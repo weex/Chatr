@@ -1,4 +1,4 @@
-<?
+<?php
 // Chatr - Super-simple chat for your site
 //   (c) 2006 David Sterry
 //   Distributed under the BSD license
@@ -6,7 +6,8 @@
 
 include("config.php");
 
-$userid = $_GET['u'];
+if( isset($_GET['u']) ) 
+  $userid = $_GET['u'];
 
 if($userid < 100000000 or $userid > 1000000000) die ("invalid user id");
 

@@ -1,4 +1,4 @@
-<?
+<?php
 // Chatr - Super-simple chat for your site
 //   (c) 2006 David Sterry
 //   Distributed under the BSD license
@@ -6,8 +6,10 @@
 
 include("config.php");
 
-$userid = $_POST['u'];
-$password = $_POST['p'];
+if( isset($_POST['u']) ) 
+  $userid = $_POST['u'];
+if( isset($_POST['p']) ) 
+  $password = $_POST['p'];
 
 // Patch for Turkish Language in USERNAME Welcome.
 $useridWellcome = str_replace("&#351;","s",$userid); // þ -> s

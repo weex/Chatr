@@ -1,4 +1,4 @@
-<?
+<?php
 // Chatr - Super-simple chat for your site
 //   (c) 2006 David Sterry
 //   Distributed under the BSD license
@@ -6,8 +6,10 @@
 
 include("config.php");
 
-$user = $_GET['u'];
-$text = $_GET['t'];
+if( isset($_GET['u']) )
+  $user = $_GET['u'];
+if( isset($_GET['t']) )
+  $text = $_GET['t'];
 
 echo $text;
 

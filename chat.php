@@ -56,15 +56,16 @@ function setsmiley(what){
 				
 		<input class="mytext" id="mytext" name="mytext" type="text" onFocus="textFocus=true" onBlur="textFocus=false">	
 				
-		</p><p id="charcount">0 characters</p> <?
+		</p><p id="charcount">0 characters</p> 
+<?php
   include("config.php");
-  if( $_SERVER['QUERY_STRING'] == $admin_num ) {
+  if( isset($_SERVER['admin_num']) && $_SERVER['QUERY_STRING'] == $admin_num ) {
 	echo "<a href='".$buffer_file."' target='_blank'>buffer</a> <a href='".$pings_file."' target='_blank'>pings</a> <a href='".$users_file."' target='_blank'>users</a>";
   }
 ?>
 		<p id="stats"><strong>Quick Stats</strong> Pings: 0 Requests: 0 Posts: 0 </p>
 				
-	<div id="archivelink"><strong><a href="buffertext.php?u=<? echo $_SERVER['QUERY_STRING']; ?>&d=1" target="_blank">View Archive</a></strong></div>
+	<div id="archivelink"><strong><a href="buffertext.php?u=<?php echo $_SERVER['QUERY_STRING']; ?>&d=1" target="_blank">View Archive</a></strong></div>
 	
 	</div>
 	

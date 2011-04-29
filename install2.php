@@ -1,4 +1,4 @@
-<? 
+<?php 
 // Chatr - Super-simple chat for your site
 //   (c) 2006 David Sterry
 //   Distributed under the BSD license
@@ -45,7 +45,7 @@ array_unshift( $line, "\$timeout = '62';" );
 array_unshift( $line, "\$maxlines = '20';" );
 array_unshift( $line, "\$admin = ".$admin.";" );
 array_unshift( $line, "\$admin_num = ".$admin_num.";" );
-array_unshift( $line, "<? \$email_addr = '" . $e . "';" );
+array_unshift( $line, "<?php \$email_addr = '" . $e . "';" );
  
 
 $file = implode("\n",$line);

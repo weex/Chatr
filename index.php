@@ -8,15 +8,17 @@
 <body>
 <p>Enter a name and click Login to chat. Visit <a href="http://www.sterryit.com/chatr/">Chatr</a> for updates or to get your own.</p>
 <p>  
-<?
+<?php
  
 // errors 
-if ( $_GET['alert'] == 1 ) {
-  echo "That username already exists.<br>";
-} else if ( $_GET['alert'] == 2 ) {
-  echo "The username may not contain spaces or html, and must be between 1 and 20 characters in length.<br>"; 
-} else if ( $_GET['alert'] == 3 ) {
-  echo "If you're the administator, please enter the correct password. Otherwise, enter another name.<br>";
+if( isset($_GET['alert']) ) {
+  if ( $_GET['alert'] == 1 ) {
+    echo "That username already exists.<br>";
+  } else if ( $_GET['alert'] == 2 ) {
+    echo "The username may not contain spaces or html, and must be between 1 and 20 characters in length.<br>"; 
+  } else if ( $_GET['alert'] == 3 ) {
+    echo "If you're the administator, please enter the correct password. Otherwise, enter another name.<br>";
+  }
 }
 
 ?> 
